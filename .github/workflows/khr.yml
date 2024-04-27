@@ -1,0 +1,28 @@
+name: Python Script Workflow
+
+on:
+  push:
+    branches:
+      - main  # Change this to your default branch name
+
+jobs:
+  run_script:
+    runs-on: windows-latest  # Use a Windows runner
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+      
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9  # Specify your desired Python version
+        
+    - name: Install dependencies
+      run: |
+        pip install pywin32  # If pywin32 is needed
+        
+    - name: Run Python Script
+      shell: cmd
+      run: |
+        python -c "import os; os.system('python C:\\Users\\tejas\\OneDrive\\Desktop\\khr.py')"  # Replace with the actual path
