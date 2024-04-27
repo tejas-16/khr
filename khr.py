@@ -1,4 +1,4 @@
-import os
+aimport os
 import shutil
 import datetime
 
@@ -8,7 +8,7 @@ import datetime
 print("Taking Backup")
 
 source_dir = r"C:\Users\tejas\OneDrive\Desktop\My Documents\bin"
-backup_dir = fr"C:\Users\tejas\OneDrive\Desktop\My Documents\ssh\BACKUP_{datetime.datetime.now().strftime('%d%m%Y')}"
+backup_dir = fr"C:\Users\tejas\OneDrive\Desktop\My Documents\oldapatch\BACKUP_{datetime.datetime.now().strftime('%d%m%Y')}"
 
 # Creating today's date Directory and taking the entire source directory as backup
 shutil.copytree(source_dir, backup_dir)
