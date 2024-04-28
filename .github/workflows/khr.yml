@@ -1,4 +1,4 @@
-name: Python Script Workflow
+name: Python Script Workflow khr_prod env
 
 on:
   workflow_dispatch:
