@@ -1,9 +1,11 @@
 name: Python Script Workflow
 
 on:
-  push:
-    branches:
-      - main  # Change this to your default branch name
+  workflow_dispatch:
+    inputs:
+      patch_number:
+        description: 'Enter the patch number'
+        required: true
 
 jobs:
   run_script:
@@ -25,4 +27,4 @@ jobs:
     - name: Run Python Script
       shell: cmd
       run: |
-        python -c "import os; os.system('python C:\\Users\\tejas\\OneDrive\\Desktop\\khr.py')"  # Replace with the actual path
+        python -c "import os; os.system('python C:\\Users\\tejas\\OneDrive\\Desktop\\khr_prod.py')"  # Replace with the actual path
