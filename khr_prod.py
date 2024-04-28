@@ -19,7 +19,7 @@ print("Backup completed on", backup_dir)
 
 # Ask for patch number input
 patch_number = input("Enter the patch number: ")
-patch_dir = fr"C:\Users\tejas\OneDrive\Desktop\My Documents\patch\PATCH_{patch_number}"
+patch_dir = fr"C:\Users\tejas\OneDrive\Desktop\My Documents\patch\KIAS2000_PR__{patch_number}"
 
 print("Patch Number:", patch_number)
 print("Patch Directory:", patch_dir)
