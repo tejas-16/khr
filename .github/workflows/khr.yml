@@ -28,3 +28,7 @@ jobs:
       shell: cmd
       run: |
         python -c "import os; os.system('python C:\\Users\\tejas\\OneDrive\\Desktop\\khr_prod.py')"  # Replace with the actual path
+
+      env:
+        SOURCE_DIR: C:\Users\tejas\OneDrive\Desktop\My Documents\bin  # Directly specifying the source directory
+        PATCH_NUMBER: ${{ github.event.inputs.patch_number }}
