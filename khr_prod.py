@@ -6,20 +6,20 @@ print("Taking Backup")
 
 # Source and backup directory paths
 source_dir = r"C:\Users\tejas\OneDrive\Desktop\My Documents\bin"
-backup_parent_dir = r"C:\Users\tejas\OneDrive\Desktop\My Documents\backup"
+backup_parent_dir = r"C:\Users\tejas\OneDrive\Desktop\My Documents\backup"  # Changed from ssh to backup
 backup_dir = os.path.join(backup_parent_dir, f"BACKUP_{datetime.datetime.now().strftime('%d%m%Y')}")
 
 # Create the backup directory if it doesn't exist
 os.makedirs(backup_dir, exist_ok=True)
 
 # Copy the entire source directory to the backup directory
-shutil.copytree(source_dir, backup_dir)
+shutil.copytree(source_dir, os.path.join(backup_dir, os.path.basename(source_dir)))
 
 print("Backup completed on", backup_dir)
 
 # Ask for patch number input
 patch_number = input("Enter the patch number: ")
-patch_dir = fr"C:\Users\tejas\OneDrive\Desktop\My Documents\patch\KIAS2000_PR__{patch_number}"
+patch_dir = fr"C:\Users\tejas\OneDrive\Desktop\My Documents\patch\PATCH_{patch_number}"
 
 print("Patch Number:", patch_number)
 print("Patch Directory:", patch_dir)
@@ -34,5 +34,3 @@ for root, dirs, files in os.walk(patch_dir):
         shutil.copy2(source_file, destination_file)
 
 print("Patch Deployment completed")
-
-
